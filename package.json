@@ -1,0 +1,22 @@
+{
+  "name": "proshop",
+  "version": "1.0.0",
+  "description": "MERN shopping cart app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xeeshan34/ProShop.git"
+  },
+  "author": "Muhammad Zeeshan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xeeshan34/ProShop/issues"
+  },
+  "homepage": "https://github.com/xeeshan34/ProShop#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
