@@ -1,17 +1,29 @@
-import React, { Children } from "react";
+import React, { Children, useState, useEffect } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import Product from "../components/Product";
-import Products from "../products";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import axios from "axios";
 
 const HomeScreen = () => {
+  const [products, setProduct] = useState([])
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { data } = await axios.get("http://localhost:5000/api/products", {
+        headers: {
+          Accept: "Application/json",
+          "Content-Type": "Application/json"
+        }
+      })
+      console.log('[data]', data)
+      setProduct(data)
+    }
+    fetchProducts()
+  }, [])
   return (
     <main className="py-3">
       <Container>
         <h1>Latest Products</h1>
         <Row>
-          {Products.map((product) => (
+          {products.map((product) => (
             <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
               <Product product={product} />
             </Col>
