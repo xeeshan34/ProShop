@@ -8,14 +8,16 @@ import { baseUrl } from '../components/baseUrl'
 
 const ProductScreens = () => {
   const params = useParams()
+  console.log(params.id);
   const [product, setProduct] = useState([])
   useEffect(() => {
     const fetchProduct = async () => {
       const {data} = await axios.get(`${baseUrl}api/products/${params.id}`)
+      console.log("Data",data)
       setProduct(data)
     }
     fetchProduct()
-  },[])
+  }, [])
 
   return (
     <main className="py-3">
