@@ -7,7 +7,9 @@
   "scripts": {
     "server": "node backend/server",
     "start": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run start\""
+    "dev": "concurrently \"npm run server\" \"npm run start\"",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d"
   },
   "repository": {
     "type": "git",
